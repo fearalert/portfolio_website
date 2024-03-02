@@ -10,7 +10,7 @@ export default function Navbar() {
             alt="hero"
             src={require("./assets/logo.png")}
             />
-        <a href="#" className="title-font font-medium text-white mb-4 md:mb-0">
+        <a href="#about" className="title-font font-medium text-white mb-4 md:mb-0">
           <a href="#about" className="ml-3 text-xl">
             Rohan Dhakal
           </a>
