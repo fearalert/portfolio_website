@@ -90,8 +90,12 @@ export const projects = [
 
   
 export const skills = [
- 'HTML', 'CSS', 'UI/UX Design', 'Graphic Design', 'C/C++', 'Python', 'Web Design',
- 'Research', 'ReactJs', 'Documentation', 'MS Package (Word, Excel, Powerpoint, Latex)', 
- 'Git/Github', 'Figma & Canva', 'Photoshop & Illustrator', 'SPSS Data Analysis', 'Data Science', 
- 'Blockchain', 'Team Work', 'Communication', 'Flutter & Firebase', 'Information Security', 'Networking'
+ 'HTML', 'CSS', 'UI/UX Design', 'Graphic Design', 'C/C++', 'Python',
+ 'ReactJs', 'Documentation', 'MS Package (Word, Excel, Powerpoint, Latex)', 
+ 'Git/Github', 'Figma & Canva', 'Photoshop & Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork and Leadership'
+];
+
+export const interests = [
+  'Research', 'Data Science', 'Data Analytics', 'Blockchain', 
+  'Team Work', 'Communication', 'Information Security', 'Networking'
 ];
