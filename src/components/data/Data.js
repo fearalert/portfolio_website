@@ -82,20 +82,13 @@ export const projects = [
     },
   ];
 
-
-
-
-
-
-
-  
 export const skills = [
- 'HTML', 'CSS', 'UI/UX Design', 'Graphic Design', 'C/C++', 'Python',
- 'ReactJs', 'Documentation', 'MS Package (Word, Excel, Powerpoint, Latex)', 
- 'Git/Github', 'Figma & Canva', 'Photoshop & Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork and Leadership'
+ 'HTML', 'CSS', 'UI/UX Design', 'Graphic Design', 'C/C++', 'Python', 'Javascript', 'Node.js', 'Express.js',
+ 'React.js', 'SQL, MongoDB' ,'Documentation', 'MS Package (Word, Excel, Powerpoint, Latex)', 
+ 'Git/Github', 'Figma & Canva', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork & Leadership', 'Problem-Solving'
 ];
 
 export const interests = [
-  'Research', 'Data Science', 'Data Analytics', 'Blockchain', 
-  'Team Work', 'Communication', 'Information Security', 'Networking'
+  'Research', 'Data Science', 'Data Analytics', 'Blockchain', 'UI/UX Design', 'Communication',
+   'Information Security', 'Networking', 'Software Engineering', 'Quality Assurance'
 ];

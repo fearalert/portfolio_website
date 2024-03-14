@@ -39,7 +39,7 @@ export default function About() {
             </a>
             <a
             href="#contact"
-            className="ml-4 inline-flex text-gray-400 bg-button-gray border-3 border-solid border-dodger-blue py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded-full text-lg"
+            className="ml-4 inline-flex text-gray-400 bg-button-gray border-2 border-dodger-blue py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded-full text-lg"
             >
             Contact
             </a>

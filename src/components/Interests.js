@@ -7,7 +7,7 @@ export default function Interests() {
     <section id="interests">
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
-          <HeartIcon className="w-10 inline-block mb-4" />
+          <HeartIcon className="w-10 inline-block mb-4 text-white-gray" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
             Interests
           </h1>

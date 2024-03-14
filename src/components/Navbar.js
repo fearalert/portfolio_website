@@ -31,7 +31,7 @@ export default function Navbar() {
         </a>
         </nav>
         <a
-          href={require('./assets/Rohan_cv.pdf')}
+          href={require('./assets/RohanDhakalCV.pdf')}
           className="inline-flex items-center bg-button-gray border-0 py-2 px-3 focus:outline-none hover:bg-gray-700 rounded-full text-base mt-4 md:mt-0">
             View CV
           <ArrowRightIcon className="w-4 h-4 ml-1" />
