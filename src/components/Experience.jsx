@@ -7,7 +7,7 @@ const ExperienceSection = () => (
   <section id="experience" className="bg-gray-100 py-10">
     <div className="container mx-auto px-5">
       <div className="text-center mb-10">
-        <BriefcaseIcon className="w-10 inline-block mb-4 text-dodger-blue" />
+        <BriefcaseIcon className="w-10 inline-block mb-4 text-white-gray" />
         <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
           Experience
         </h2>

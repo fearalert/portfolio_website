@@ -4,6 +4,7 @@ export default function Contact() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [error, setError] = React.useState("");
 
   function encode(data) {
     return Object.keys(data)
@@ -13,23 +14,39 @@ export default function Contact() {
       .join("&");
   }
 
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+    return re.test(String(email).toLowerCase());
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!name || !email || !message) {
+      setError("All fields are required.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError("Invalid email address.");
+      return;
+    }
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
-    .then(() => {
-      alert("Message sent!");
-      setEmail("");
-      setName("");
-      setMessage("");
-      window.location.reload();
-    })
-    .catch((error) => {
-      alert(error);
-    });
+      .then(() => {
+        alert("Message sent!");
+        setEmail("");
+        setName("");
+        setMessage("");
+        setError("");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 
   return (
@@ -42,7 +59,7 @@ export default function Contact() {
             title="map"
             className="absolute inset-0"
             style={{ filter: "opacity(0.7)" }}
-            src = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d904726.6131739549!2d85.24565535!3d27.65273865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQyJzEyLjkiTiA4NcKwMjInMzUuOCJF!5e0!3m2!1sen!2snp!4v1709369345440!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d904726.6131739549!2d85.24565535!3d27.65273865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQyJzEyLjkiTiA4NcKwMjInMzUuOCJF!5e0!3m2!1sen!2snp!4v1709369345440!5m2!1sen!2snp"
           />
           <div className="bg-button-gray relative flex flex-wrap py-6 px-16 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
@@ -50,8 +67,7 @@ export default function Contact() {
                 ADDRESS
               </h2>
               <p className="mt-1">
-               Dhulikhel,
-                Kavre, Nepal
+                Kathmandu, Nepal
               </p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
@@ -79,6 +95,7 @@ export default function Contact() {
           <p className="leading-relaxed mb-5">
             You can get in touch with me from here.
           </p>
+          {error && <p>{alert(error)}</p>}
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-white-gray">
               Name
@@ -88,6 +105,7 @@ export default function Contact() {
               id="name"
               name="name"
               className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -100,6 +118,7 @@ export default function Contact() {
               id="email"
               name="email"
               className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -113,6 +132,7 @@ export default function Contact() {
               id="message"
               name="message"
               className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
