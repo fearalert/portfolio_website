@@ -1,5 +1,13 @@
 export const projects = [
     {
+      title: "Image Sharing App",
+      subtitle: "Personal Project",
+      description:
+        "A photo-sharing app made with Node.js. MongoDB and React.js. \n Developed API documentation using Swagger UI and SwaggerJsDocs",
+      image: "https://th.bing.com/th/id/R.660c8334008afef8b87b8697c3bb8235?rik=C4wUwj%2beyQjT9w&pid=ImgRaw&r=0",
+      link: "https://github.com/fearalert/",
+    },
+    {
       title: "Personal Portfolio",
       subtitle: "Personal Project",
       description:
@@ -83,12 +91,14 @@ export const projects = [
   ];
 
 export const skills = [
- 'HTML', 'CSS', 'UI/UX Design', 'Graphic Design', 'C/C++', 'Python', 'Javascript', 'Node.js', 'Express.js',
- 'React.js', 'SQL, MongoDB' ,'Documentation', 'MS Package (Word, Excel, Powerpoint, Latex)', 
- 'Git/Github', 'Figma & Canva', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork & Leadership', 'Problem-Solving'
+ 'HTML, CSS', 'UI/UX Design', 'Graphic Design', 'Javascript', 'Typescript', 'MERN',
+ 'Next.js', 'web3.js, Ether.js', 'Hyperledger Fabric', 'Solidity', 'SQL, MongoDB' , 'Documentation', 'Docker Basics',
+ 'Git', 'Figma, Canva', 'Adobe Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork & Leadership', 'Problem-Solving'
 ];
 
 export const interests = [
-  'Research', 'Data Science', 'Data Analytics', 'Blockchain', 'UI/UX Design', 'Communication',
-   'Information Security', 'Networking', 'Software Engineering', 'Quality Assurance'
+  'Research', 'Blockchain', 'UI/UX Design', 'Communication',
+   'Information Security', 'Networking', 'Software Engineering', 
+  //  'Quality Assurance',
+  //  'Data Science', 'Data Analytics',
 ];

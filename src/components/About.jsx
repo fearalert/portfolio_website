@@ -45,14 +45,12 @@ export default function About() {
             </a>
           </div>
         </div>
-        <div class="mt-8 md:mt-0 flex flex-col ">
-        {/* <h2 class="text-white-gray text-xl">SOCIAL LINKS</h2> */}
-        <div class="flex flex-col justify-center align-center">
+        <h1 className="sm:block xs:block md:hidden">Social Links</h1>
+        <div class="flex xl:flex-col lg:flex-col md:flex-col sm:flex-row xs:flex-row justify-center align-center">
             <SocialIcon network="behance" fallback="behance" url = "https://www.behance.net/rohandhakal2" />
             <SocialIcon network="github" fallback="github" url = "https://github.com/fearalert" />
             <SocialIcon network="linkedin" fallback="linkedin" url = "https://www.linkedin.com/in/rohan-dhakal-4356b81a1/" />
             <SocialIcon network="facebook" fallback="facebook" url = "https://www.facebook.com/dhakal.rohan/" />
-        </div>
         </div>
         
       </div>
