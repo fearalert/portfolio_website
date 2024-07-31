@@ -10,7 +10,7 @@ export default function Navbar() {
     e.preventDefault();
     handleReloadToRoot();
   };
-  
+
   return (
     <header className="bg-background-black md:sticky top-0 z-10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -29,9 +29,9 @@ export default function Navbar() {
           <a href="#about" className="mr-5 hover:text-dodger-blue hover:font-bold">
             About
           </a>
-          <a href="#projects" className="mr-5 hover:text-dodger-blue hover:font-bold">
-            Projects
-          </a>
+          {/* <a href="#education" className="mr-5 hover:text-dodger-blue hover:font-bold">
+            Education
+          </a> */}
           <a href="#projects" className="mr-5 hover:text-dodger-blue hover:font-bold">
             Projects
           </a>
