@@ -95,7 +95,7 @@ export default function Contact() {
           <p className="leading-relaxed mb-5">
             You can get in touch with me from here.
           </p>
-          {error && <p className="text-red-500 mb-4">{error}</p>}
+          {error && <p>{alert(error)}</p>}
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-white-gray">
               Name
