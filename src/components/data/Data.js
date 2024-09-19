@@ -98,7 +98,5 @@ export const skills = [
 
 export const interests = [
   'Research', 'Blockchain', 'UI/UX Design', 'Communication',
-   'Information Security', 'Networking', 'Software Engineering', 
-  //  'Quality Assurance',
-  //  'Data Science', 'Data Analytics',
+   'Information Security', 'Networking', 'Software Engineering'
 ];
