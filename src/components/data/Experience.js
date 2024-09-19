@@ -1,7 +1,7 @@
 export const experience = [
     {
-      title: "CBDC Developer",
-      position: "Software Engineer, Nepal Rastra Bank",
+      title: "Software Engineer (CBDC)",
+      position: "Nepal Rastra Bank",
       period: "Jul 2024 - Present",
       details: [
     //     "Improvised the existing system performance by 10%",
@@ -11,8 +11,8 @@ export const experience = [
       ],
     },
     {
-      title: "CBDC Research & Development",
-      position: "Internship, Nepal Rastra Bank",
+      title: "Software Engineer (CBDC) Intern",
+      position: "Nepal Rastra Bank",
       period: "Apr 2024 - Jul 2024",
       details: [
         // "Collaborated with a five-person team to develop a CBDC model for our country Nepal.",
