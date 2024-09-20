@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-  const [error, setError] = React.useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // New state for loading
 
   function encode(data) {
     return Object.keys(data)
@@ -32,6 +33,8 @@ export default function Contact() {
       return;
     }
 
+    setLoading(true);
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -46,7 +49,8 @@ export default function Contact() {
       })
       .catch((error) => {
         alert(error);
-      });
+      })
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -66,15 +70,16 @@ export default function Contact() {
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 ADDRESS
               </h2>
-              <p className="mt-1">
-                Kathmandu, Nepal
-              </p>
+              <p className="mt-1">Kathmandu, Nepal</p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 EMAIL
               </h2>
-              <a href="mailto:dhakalrohan229@gmail.com" className="text-white tracking-widest leading-relaxed">
+              <a
+                href="mailto:dhakalrohan229@gmail.com"
+                className="text-white tracking-widest leading-relaxed"
+              >
                 dhakalrohan229@email.com
               </a>
               <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
@@ -86,16 +91,19 @@ export default function Contact() {
         </div>
         <form
           netlify
+          netlify-honeypot="bot-field"
           name="contact"
           onSubmit={handleSubmit}
-          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
             Hire Me
           </h2>
           <p className="leading-relaxed mb-5">
             You can get in touch with me from here.
           </p>
-          {error && <p>{alert(error)}</p>}
+          {error && <p className="text-red">{error}</p>}
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-white-gray">
               Name
@@ -125,7 +133,8 @@ export default function Contact() {
           <div className="relative mb-4">
             <label
               htmlFor="message"
-              className="leading-7 text-sm text-white-gray">
+              className="leading-7 text-sm text-white-gray"
+            >
               Message
             </label>
             <textarea
@@ -136,10 +145,12 @@ export default function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+
           <button
             type="submit"
-            className="text-white bg-dodger-blue border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded-full text-lg">
-            Submit
+            className={`text-white ${(!loading)? 'bg-dodger-blue': 'bg-button-gray'} hover:bg-opacity-50 border-0 py-2 px-6 focus:outline-none rounded-full text-lg`}
+          >
+            {loading ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
