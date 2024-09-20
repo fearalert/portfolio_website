@@ -2,6 +2,8 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import 'react-social-icons/facebook';
 import 'react-social-icons/behance';
+import { Link } from "react-router-dom";
+
 
 export default function About() {
   return (
@@ -32,24 +34,24 @@ export default function About() {
           </p>
           
           <div className="flex justify-center align-center">
-            <a
-              href="#projects"
+            <Link
+              to="/resume"
               className="inline-flex text-white bg-dodger-blue border-0 py-2 px-6 focus:outline-none hover:bg-dodger-blue rounded-full text-lg">
               Portfolio
-            </a>
-            <a
-            href="#contact"
+            </Link>
+            <Link
+            to="/contact"
             className="ml-4 inline-flex text-gray-400 bg-button-gray border-2 border-dodger-blue py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded-full text-lg"
             >
             Contact
-            </a>
+            </Link>
           </div>
         </div>
         <h1 className="sm:block xs:block md:hidden">Social Links</h1>
         <div class="flex xl:flex-col lg:flex-col md:flex-col sm:flex-row xs:flex-row justify-center align-center">
             <SocialIcon network="behance" fallback="behance" url = "https://www.behance.net/rohandhakal2" />
             <SocialIcon network="github" fallback="github" url = "https://github.com/fearalert" />
-            <SocialIcon network="linkedin" fallback="linkedin" url = "https://www.linkedin.com/in/rohan-dhakal-4356b81a1/" />
+            <SocialIcon network="linkedin" fallback="linkedin" url = "https://www.linkedin.com/in/dhakalrohan/" />
             <SocialIcon network="facebook" fallback="facebook" url = "https://www.facebook.com/dhakal.rohan/" />
         </div>
         

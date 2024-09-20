@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@heroicons/react/solid";
+// import { ArrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -46,14 +46,17 @@ export default function Navbar() {
           <Link to="/contact" className={`mr-5 ${isActive("/contact")}`}>
             Contact
           </Link>
+          <Link to="/resume" className={`mr-5 ${isActive("/resume")}`}>
+            Resume
+          </Link>
         </nav>
-        <a
+        {/* <a
           href={require('../assets/CV_Rohan.pdf')}
           className="inline-flex items-center bg-button-gray border-0 py-2 px-3 focus:outline-none hover:bg-gray-700 rounded-full text-base mt-4 md:mt-0"
         >
           View CV
           <ArrowRightIcon className="w-4 h-4 ml-1" />
-        </a>
+        </a> */}
       </div>
     </header>
   );
