@@ -1,8 +1,9 @@
-// import { ArrowRightIcon } from "@heroicons/react/solid";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const handleReloadToRoot = () => {
@@ -19,21 +20,34 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-background-black md:sticky top-0 z-10">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <img
-          onClick={handleClick}
-          className="w-12 h-12 rounded-full cursor-pointer"
-          alt="hero"
-          src={require("../assets/logo.png")}
-        />
-        <div
-          onClick={handleClick}
-          className="title-font font-medium text-white mb-4 md:mb-0 cursor-pointer"
-        >
-          <span className="ml-3 text-lg">Rohan Dhakal</span>
+    <header className="bg-background-black sticky top-0 z-10">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-center text-center mb-2">
+          <img
+            onClick={handleClick}
+            className="w-12 h-12 rounded-full cursor-pointer"
+            alt="hero"
+            src={require("../assets/logo.png")}
+          />
+          <div
+            onClick={handleClick}
+            className="title-font font-medium text-white cursor-pointer"
+          >
+            <span className="ml-3 h-12 text-lg text-center font-bold">Rohan Dhakal</span>
+          </div>
         </div>
-        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
+
+        <div className="md:hidden mt-2">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+            {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+          </button>
+        </div>
+
+        <nav
+          className={`${
+            isOpen ? "block" : "hidden"
+          } md:flex flex-col md:flex-row items-center text-base justify-center md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700`}
+        >
           <Link to="/about" className={`mr-5 ${isActive("/about")}`}>
             About
           </Link>
@@ -50,13 +64,6 @@ export default function Navbar() {
             Resume
           </Link>
         </nav>
-        {/* <a
-          href={require('../assets/CV_Rohan.pdf')}
-          className="inline-flex items-center bg-button-gray border-0 py-2 px-3 focus:outline-none hover:bg-gray-700 rounded-full text-base mt-4 md:mt-0"
-        >
-          View CV
-          <ArrowRightIcon className="w-4 h-4 ml-1" />
-        </a> */}
       </div>
     </header>
   );
