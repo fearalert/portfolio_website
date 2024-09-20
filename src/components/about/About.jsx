@@ -11,7 +11,7 @@ export default function About() {
             <img
             className="w-64 h-64 rounded-full bg-white shadow-lg mx-auto"
             alt="hero"
-            src={require("./assets/myimage.jpg")}
+            src={require("../assets/myimage.jpg")}
             />
             <div class="mt-8 md:mt-0">
       </div>

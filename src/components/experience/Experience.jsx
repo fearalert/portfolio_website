@@ -1,6 +1,6 @@
 import React from "react";
-import { experience } from "./data/Experience";
-import TimelineItem from "./TimelineItem";
+import { experience } from "../data/Experience";
+import TimelineItem from "../TimelineItem";
 
 export const ExperienceSection = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { education } from "./data/Experience";
+import { education } from "../data/Experience";
 export const EducationSection = () => {
   return (
     <section className="bg-gray-900 text-white py-12">
