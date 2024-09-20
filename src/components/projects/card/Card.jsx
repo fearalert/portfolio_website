@@ -26,10 +26,11 @@ const ProjectCard = ({ repo, getCodingImage, formatRepoName }) => {
           <div className="px-6 py-4">
             <h1 className="text-white font-bold text-lg mb-2 uppercase">{formatRepoName(repo.name)}</h1>
             <p className="text-white text-opacity-70 text-sm mb-4">
-              {repo.description || "No description available"}
+              {/* {repo.description || "No description available"} */}
+              {"Click on view details to view the project"}
             </p>
             <div className="flex justify-start">
-              <button onClick={repo.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center text-white bg-dodger-blue font-medium py-2 px-4 rounded-full">
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center text-white bg-dodger-blue font-medium py-2 px-4 rounded-full">
                 <span className="mr-2">View Details</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +46,7 @@ const ProjectCard = ({ repo, getCodingImage, formatRepoName }) => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
