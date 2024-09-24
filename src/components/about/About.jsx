@@ -20,17 +20,13 @@ export default function About() {
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <br className="hidden lg:inline-block" />
-        <p className="sm:text-xl text-xl font-medium text-white-gray">UI/UX Designer . Software Engineer</p>
+        <p className="sm:text-xl text-xl font-medium text-white-gray">Software Engineer . UI/UX Designer</p>
           <h1 className="title-font sm:text-4xl text-4xl mb-4 font-medium text-white">
             Rohan Dhakal
             
           </h1>
           <p className="mb-8 leading-relaxed">
-          An ambitious and driven graduate in Computer Engineering at Kathmandu University 
-          equipped with a strong work ethic, and a solid understanding of key concepts in computer science 
-          and engineering, coupled with hands-on experience in various programming languages, algorithms, 
-          and graphics design. Seeking opportunities to contribute my determination, enthusiasm, skills, 
-          and fresh perspective to projects and skills to a dynamic team.
+          A motivated Computer Engineering graduate from Kathmandu University with a strong foundation in computer science and hands-on experience in programming, algorithms, backend development and front end development. Eager to apply my skills, enthusiasm, and fresh perspective to contribute to a dynamic team.
           </p>
           
           <div className="flex justify-center align-center">
