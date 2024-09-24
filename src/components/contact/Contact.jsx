@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // New state for loading
+  const [loading, setLoading] = useState(false);
 
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
+  const encode = (data) => 
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
-  }
 
-  function validateEmail(email) {
+  const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
     return re.test(String(email).toLowerCase());
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const { name, email, message } = formData;
 
     if (!name || !email || !message) {
       setError("All fields are required.");
@@ -35,23 +41,37 @@ export default function Contact() {
 
     setLoading(true);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
-    })
-      .then(() => {
-        alert("Message sent!");
-        setEmail("");
-        setName("");
-        setMessage("");
-        setError("");
-      })
-      .catch((error) => {
-        alert(error);
-      })
-      .finally(() => setLoading(false));
-  }
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData }),
+      });
+      alert("Message sent!");
+      setFormData({ name: "", email: "", message: "" });
+      setError("");
+    } catch (error) {
+      alert("Error sending message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const InputField = ({ id, label, type = "text" }) => (
+    <div className="relative mb-4">
+      <label htmlFor={id} className="leading-7 text-sm text-white-gray">
+        {label}
+      </label>
+      <input
+        type={type}
+        id={id}
+        name={id}
+        className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+        value={formData[id]}
+        onChange={handleChange}
+      />
+    </div>
+  );
 
   return (
     <section id="contact" className="relative">
@@ -90,7 +110,7 @@ export default function Contact() {
           </div>
         </div>
         <form
-          netlify
+          data-netlify="true"
           netlify-honeypot="bot-field"
           name="contact"
           onSubmit={handleSubmit}
@@ -104,51 +124,24 @@ export default function Contact() {
             You can get in touch with me from here.
           </p>
           {error && <p className="text-red">{error}</p>}
+          <InputField id="name" label="Name" />
+          <InputField id="email" label="Email" type="email" />
           <div className="relative mb-4">
-            <label htmlFor="name" className="leading-7 text-sm text-white-gray">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="relative mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-white-gray">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="relative mb-4">
-            <label
-              htmlFor="message"
-              className="leading-7 text-sm text-white-gray"
-            >
+            <label htmlFor="message" className="leading-7 text-sm text-white-gray">
               Message
             </label>
             <textarea
               id="message"
               name="message"
               className="w-full bg-button-gray rounded border border-button-gray focus:border-dodger-blue focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={formData.message}
+              onChange={handleChange}
             />
           </div>
 
           <button
             type="submit"
-            className={`text-white ${(!loading)? 'bg-dodger-blue': 'bg-button-gray'} hover:bg-opacity-50 border-0 py-2 px-6 focus:outline-none rounded-full text-lg`}
+            className={`text-white ${!loading ? 'bg-dodger-blue' : 'bg-button-gray'} hover:bg-opacity-50 border-0 py-2 px-6 focus:outline-none rounded-full text-lg`}
           >
             {loading ? "Sending..." : "Submit"}
           </button>
