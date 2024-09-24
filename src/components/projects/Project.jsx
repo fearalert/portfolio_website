@@ -112,12 +112,12 @@ export default function Projects() {
         </div>
         {loading ? (
           <div className="flex flex-wrap -m-4">
-            {Array.from({ length: 6 }).map((_, index) => (
+            {Array.from({ length: 4 }).map((_, index) => (
               <ProjectCardSkeleton key={index} />
             ))}
           </div>
         ) : error ? (
-          <p className="text-lg text-red-500">{error}</p>
+          <p className="text-lg text-red">{error}</p>
         ) : (
           <div className="flex flex-wrap -m-4">
             {githubProjects.map((repo) => (
