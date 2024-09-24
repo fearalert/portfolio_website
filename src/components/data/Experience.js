@@ -1,24 +1,32 @@
 export const experience = [
     {
       title: "Software Engineer (CBDC)",
-      position: "Nepal Rastra Bank",
+      company: "Nepal Rastra Bank",
       period: "Jul 2024 - Present",
+      "details": [
+      "Designed the interactive prototypes and wireframes, streamlining the design approval process.",
+      "Standardized UI components by developing a design system, cutting down design and development time.",
+      "Conducted a detailed research on wholesale CBDC, highlighting potential use cases and risks; findings were integrated into team strategy sessions, enhancing decision-making."
+    ]
+    },
+    {
+      title: "UI/UX Intern",
+      company: "Codsoft (Remote)",
+      period: "Aug 2024 - Sep 2024",
       details: [
-        // "Improvised the existing system performance by 10%",
-        // "Conducted security assessments and implemented robust cryptographic solutions to safeguard the digital currency.",
-        // "Monitored and analyzed the performance of the CBDC system, making necessary improvements to enhance efficiency.",
-        // "Presented project demo of the prototype to a division head and executive director of our concerned department.",
+        "Designed and developed various UI/UX components, including a restaurant menu, email templates,and login/signup flows.",
+        "Learned about design consistency and alignment with user-centered principles.",
       ],
     },
     {
       title: "Software Engineer (CBDC) Intern",
-      position: "Nepal Rastra Bank",
+      company: "Nepal Rastra Bank",
       period: "Apr 2024 - Jul 2024",
       details: [
-        // "Collaborated with a five-person team to develop a CBDC model for our country Nepal.",
-        // "Grasped a solid understanding of Fintech, and Blockchain Technology (both permissioned and permissionless).",
-        // "Contributed to developing the CBDC for Nepal Rastra Bank and developed documentation skills for the system designed.",
-        // "Developed Presentation skills with various meetings with high-class officials.",
+        "Collaborated with a five-person team to develop a CBDC model for our country Nepal.",
+        "Grasped a solid understanding of Fintech, and Blockchain Technology (both permissioned and permissionless).",
+        "Contributed to developing the CBDC for Nepal Rastra Bank and developed documentation skills for the system designed.",
+        "Developed Presentation skills with various meetings with high-class officials.",
       ],
     },
   ];

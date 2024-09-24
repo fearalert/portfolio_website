@@ -3,7 +3,7 @@ import React from "react";
 import { skills } from "../data/Data";
 import Interests from "./Interests";
 
-export default function Skills() {
+export default function SkillsSection() {
   return (
     <>
     <section id="skills">

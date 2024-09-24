@@ -91,12 +91,11 @@ export const projects = [
   ];
 
 export const skills = [
- 'HTML, CSS', 'UI/UX Design', 'Graphic Design', 'Javascript', 'Typescript', 'MERN',
- 'Next.js', 'web3.js, Ether.js', 'Hyperledger Fabric', 'Solidity', 'SQL, MongoDB' , 'Documentation', 'Docker Basics',
- 'Git', 'Figma, Canva', 'Adobe Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork & Leadership', 'Problem-Solving'
+ 'HTML, CSS', 'UI/UX Design', 'Javascript', 'Typescript', 'MERN', 'Tailwind, Bootstrap',
+ 'Next.js', 'web3.js, Ether.js', 'Hyperledger Fabric', 'Solidity', 'SQL, MongoDB' , 'Documentation', 'Docker Basics', 'Python', 'Power BI', 
+ 'Git', 'Figma, Canva', 'Adobe Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork, Leadership', 'Problem-Solving', 'Presentation'
 ];
 
 export const interests = [
-  'Research', 'Blockchain', 'UI/UX Design',
-   'Information Security', 'Software Engineering', 'web3', 'MERN Stack'
+  'Research', 'Blockchain', 'UI/UX Design', 'Information Security', 'Software Engineering', 'Web3', 'MERN Stack', 'Software Engineering'
 ];
