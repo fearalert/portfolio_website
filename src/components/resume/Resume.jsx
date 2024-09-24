@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import ExperienceSection from '../experience/Experience.jsx';
 import EducationSection from '../education/Education.jsx';
 import SkillsInterests from './SkillsandInterests.jsx';
@@ -6,9 +8,53 @@ import { interests } from "../data/Data";
 import { HeartIcon } from '@heroicons/react/solid';
 
 const Profile = () => {
+  const downloadResume = async () => {
+    const element = document.getElementById('resume');
+
+    const canvas = await html2canvas(element, {
+      backgroundColor: null,
+    });
+    const imgData = canvas.toDataURL('image/png');
+    
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
+      putOnlyUsedFonts: true,
+      floatPrecision: 16
+    });
+
+    const imgWidth = 210;
+    const pageHeight = pdf.internal.pageSize.height;
+    const imgHeight = ((canvas.height * imgWidth) / canvas.width)-11.5;
+    let heightLeft = imgHeight;
+
+    let position = 0;
+
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+    }
+
+    pdf.save('Rohan_resume.pdf');
+  };
+
   return (
     <div className="bg-background-black text-white min-h-screen p-5">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-4 gap-10">
+      <div className="text-center mt-4 mb-8">
+        <button 
+          onClick={downloadResume} 
+          className="bg-dodger-blue hover:bg-dark-gray hover:border-2 hover:border-dodger-blue text-white py-2 px-4 rounded-full transition duration-300"
+        >
+          Download Resume
+        </button>
+      </div>
+      <div id="resume" className="bg-background-black max-w-6xl mx-auto grid lg:grid-cols-4 gap-10">
         <Sidebar />
         <MainContent />
       </div>
@@ -27,6 +73,7 @@ const Sidebar = memo(() => {
     </div>
   );
 });
+
 
 const ProfileHeader = () => (
   <div className="text-center">
