@@ -16,8 +16,8 @@ export default function About() {
             src={require("../assets/myimage.jpg")}
             loading="lazy"
             />
-            <div class="mt-8 md:mt-0">
-      </div>
+            <div className="mt-8 md:mt-0">
+            </div>
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <br className="hidden lg:inline-block" />
@@ -45,7 +45,7 @@ export default function About() {
           </div>
         </div>
         <h1 className="sm:block xs:block md:hidden">Social Links</h1>
-        <div class="flex xl:flex-col lg:flex-col md:flex-col sm:flex-row xs:flex-row justify-center align-center">
+        <div className="flex xl:flex-col lg:flex-col md:flex-col sm:flex-row xs:flex-row justify-center align-center">
             <SocialIcon network="behance" fallback="behance" url = "https://www.behance.net/rohandhakal2" />
             <SocialIcon network="github" fallback="github" url = "https://github.com/fearalert" />
             <SocialIcon network="linkedin" fallback="linkedin" url = "https://www.linkedin.com/in/dhakalrohan/" />
