@@ -100,14 +100,14 @@ export default function Projects() {
 
   return (
     <section id="projects" className="text-white-gray bg-background-black body-font">
-      <div className="container lg:px-24 md:px-16 sm:px-12 xs:px-10 py-10 mx-auto">
+      <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
           <CodeIcon className="w-10 inline-block mb-4 text-white-gray" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
             Projects
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-            Below are some of my projects fetched from GitHub public repos.
+            Below are my projects fetched from github public repos.
           </p>
         </div>
         {loading ? (
