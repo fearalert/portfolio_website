@@ -100,7 +100,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="text-white-gray bg-background-black body-font">
-      <div className="container px-5 py-10 mx-auto">
+      <div className="container px-5 md:px-20 py-10 mx-auto">
         <div className="text-center mb-20">
           <CodeIcon className="w-10 inline-block mb-4 text-white-gray" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
