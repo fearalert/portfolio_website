@@ -4,9 +4,10 @@ export const experience = [
       company: "Nepal Rastra Bank",
       period: "Jul 2024 - Present",
       "details": [
-      "Designed the interactive prototypes and wireframes, streamlining the design approval process.",
-      "Standardized UI components by developing a design system, cutting down design and development time.",
-      "Conducted a detailed research on wholesale CBDC, highlighting potential use cases and risks; findings were integrated into team strategy sessions, enhancing decision-making."
+      "Designed the interactive prototypes and wireframes, and standardized UI components.",
+      "Worked with APIs to enhance application functionality and collaborated with team to design project plans and deliverables. Collaborated with team to define and manage business data models effectively.",
+      "Conducted research on wholesale CBDC, influencing product strategy and gaining approval for further development. Also, conducted research on cyber resilence of CBDC.",
+      "Created user manual on how the system works and guide to use the software."
     ]
     },
     {
@@ -23,12 +24,22 @@ export const experience = [
       company: "Nepal Rastra Bank",
       period: "Apr 2024 - Jul 2024",
       details: [
-        "Collaborated with a five-person team to develop a CBDC model for our country Nepal.",
+        "Contributed to CBDC prototype development while gaining knowledge in fintech and backend technologies.",
         "Grasped a solid understanding of Fintech, and Blockchain Technology (both permissioned and permissionless).",
-        "Contributed to developing the CBDC for Nepal Rastra Bank and developed documentation skills for the system designed.",
-        "Developed Presentation skills with various meetings with high-class officials.",
+        "Assisted with API integration and improved technical documentation for enhanced project clarity, and gained exposure to containerization using Docker.",
       ],
     },
+    {
+      title: "MERN Stack Developer",
+      company: "Khudra.asia (Contract)",
+      period: "Sept 2023 - Feb 2024",
+      details: [
+        "Developed dynamic, responsive user interfaces using React.js and integrated Material-UI for consistent design.",
+        "Created efficient APIs and server-side logic with Node.js and Express.js, ensuring smooth interaction between frontend and backend.",
+        "Engaged in code reviews, debugging, and troubleshooting to maintain high code quality and functionality.",
+      ],
+    },
+    
   ];
   
   export const education = [
