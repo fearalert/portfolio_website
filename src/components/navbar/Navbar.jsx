@@ -27,7 +27,7 @@ export default function Navbar() {
             onClick={handleClick}
             className="w-12 h-12 rounded-full cursor-pointer"
             alt="hero"
-            src={require("../assets/logo.png")}
+            src={require("../../assets/logo.png")}
           />
           <div
             onClick={handleClick}
