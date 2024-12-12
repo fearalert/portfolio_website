@@ -7,6 +7,7 @@ import Resume from "./pages/resume/Resume";
 import SkillsInterests from "./pages/skills/SkillsInterests";
 import Navbar from "./components/navbar/Navbar";
 import GalaxyAnimation from "./components/canvas/canvas";
+import "./App,css";
 
 export default function App() {
   return (
