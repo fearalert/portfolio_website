@@ -93,7 +93,7 @@ export const projects = [
 export const skills = [
  'Javascript', 'Typescript', 'MERN Stack', 'Tailwind, Bootstrap',
  'Next.js', 'Hyperledger Fabric', 'Solidity', 'SQL, ORM' , 'Docker Basics', 'Python', 
- 'Git', 'Figma, UI/UX Design' 'Flutter & Firebase', 'Teamwork, Leadership', 'Problem-Solving', 'Presentation'
+ 'Git', 'Figma, UI/UX Design', 'Flutter & Firebase', 'Teamwork, Leadership', 'Problem-Solving', 'Presentation'
 ];
 
 export const interests = [
