@@ -91,9 +91,9 @@ export const projects = [
   ];
 
 export const skills = [
- 'HTML, CSS', 'UI/UX Design', 'Javascript', 'Typescript', 'MERN', 'Tailwind, Bootstrap',
- 'Next.js', 'web3.js, Ether.js', 'Hyperledger Fabric', 'Solidity', 'SQL, MongoDB' , 'Documentation', 'Docker Basics', 'Python', 'Power BI', 
- 'Git', 'Figma, Canva', 'Adobe Illustrator', 'SPSS Data Analysis', 'Flutter & Firebase', 'Teamwork, Leadership', 'Problem-Solving', 'Presentation'
+ 'Javascript', 'Typescript', 'MERN Stack', 'Tailwind, Bootstrap',
+ 'Next.js', 'Hyperledger Fabric', 'Solidity', 'SQL, ORM' , 'Docker Basics', 'Python', 
+ 'Git', 'Figma, UI/UX Design' 'Flutter & Firebase', 'Teamwork, Leadership', 'Problem-Solving', 'Presentation'
 ];
 
 export const interests = [
